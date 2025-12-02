@@ -1,5 +1,10 @@
 function Home() {
-    return <h1>Amo amar você!</h1>
+    return (
+        <div>
+            <h1>Amo amar você Lari!</h1>
+            <p>Ass: Gabriel Camurça</p>
+        </div>
+    )
 }
 
 export default Home;
