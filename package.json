@@ -4,13 +4,14 @@
   "description": "Um projeto para aprender a programar com mais eficiência, como o Filipe Deschamps.",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run docker && next dev",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "docker": "docker compose -f infra/compose.yaml up -d",
     "docker:watch": "docker compose -f infra/compose.yaml up",
+    "docker:stop": "docker compose -f infra/compose.yaml stop",
     "docker:down": "docker compose -f infra/compose.yaml down"
   },
   "author": "",
