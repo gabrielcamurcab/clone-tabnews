@@ -6,6 +6,7 @@ export default defineConfig([
     files: ["**/*.js"],
     rules: {
       semi: "error",
+      indent: ["error", 2],
     },
     languageOptions: {
       parserOptions: {
