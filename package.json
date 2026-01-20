@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Um projeto para aprender a programar com mais eficiência, como o Filipe Deschamps.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "npm run docker && npm run wait-for-postgres && npm run migration:up && next dev",
     "lint:prettier:check": "prettier --check .",
