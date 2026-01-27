@@ -1,19 +1,16 @@
-// eslint.config.js
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
 
-export default defineConfig([
-  {
-    files: ["**/*.js"],
-    rules: {
-      semi: "error",
-      indent: ["error", 2],
-    },
-    languageOptions: {
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-    },
-  },
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
 ]);
+
+export default eslintConfig;
