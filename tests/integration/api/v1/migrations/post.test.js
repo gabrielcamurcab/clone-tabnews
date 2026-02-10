@@ -1,6 +1,5 @@
 import database from "infra/database.js";
 import orcherstrator from "tests/orcherstrator";
-import database from "infra/database.js";
 
 beforeAll(async () => {
   await orcherstrator.waitForAllServices();
