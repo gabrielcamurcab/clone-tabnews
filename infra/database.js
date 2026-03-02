@@ -26,7 +26,7 @@ async function getNewClient() {
     ssl: getSSLValues(),
   });
 
-  client.connect();
+  await client.connect();
   return client;
 }
 
