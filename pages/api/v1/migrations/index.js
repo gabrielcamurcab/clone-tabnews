@@ -31,24 +31,36 @@ function onErrorHandler(error, request, response) {
   response.status(500).json(publicErrorObject);
 }
 
-let dbClient;
-
-dbClient = await database.getNewClient();
-const defaultMigrationsOptions = {
-  dbClient: dbClient,
-  dir: join("infra", "migrations"),
-  dryRun: true,
-  direction: "up",
-  verbose: true,
-  migrationsTable: "pg_migrations",
-};
-
 async function getHandler(request, response) {
+  let dbClient;
+
+  dbClient = await database.getNewClient();
+  const defaultMigrationsOptions = {
+    dbClient: dbClient,
+    dir: join("infra", "migrations"),
+    dryRun: true,
+    direction: "up",
+    verbose: true,
+    migrationsTable: "pg_migrations",
+  };
+
   const pendingMigrations = await migrationRunner(defaultMigrationsOptions);
   response.status(200).json(pendingMigrations);
 }
 
 async function postHandler(request, response) {
+  let dbClient;
+
+  dbClient = await database.getNewClient();
+  const defaultMigrationsOptions = {
+    dbClient: dbClient,
+    dir: join("infra", "migrations"),
+    dryRun: true,
+    direction: "up",
+    verbose: true,
+    migrationsTable: "pg_migrations",
+  };
+
   const migratedMigrations = await migrationRunner({
     ...defaultMigrationsOptions,
     dryRun: false,
