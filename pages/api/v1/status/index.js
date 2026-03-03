@@ -8,7 +8,7 @@ router.get(getHandler);
 
 export default router.handler({
   onNoMatch: onNoMatchHandler,
-  onError: onErrorHandler
+  onError: onErrorHandler,
 });
 
 function onNoMatchHandler(request, response) {
