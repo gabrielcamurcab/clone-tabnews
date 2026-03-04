@@ -26,7 +26,7 @@ async function listPendingMigrations() {
   } catch (error) {
     throw new ServiceError({
       message: "Erro ao listar as migrações pendentes.",
-      cause: error
+      cause: error,
     });
   } finally {
     dbClient?.end();
@@ -49,7 +49,7 @@ async function runPendingMigrations() {
   } catch (error) {
     throw new ServiceError({
       message: "Erro ao executar as migrações pendentes.",
-      cause: error
+      cause: error,
     });
   } finally {
     dbClient?.end();
@@ -58,8 +58,7 @@ async function runPendingMigrations() {
 
 const migrator = {
   listPendingMigrations,
-  runPendingMigrations
+  runPendingMigrations,
 };
-
 
 export default migrator;
